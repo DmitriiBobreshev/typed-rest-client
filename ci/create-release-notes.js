@@ -154,7 +154,7 @@ async function isReleaseTagExists(version) {
 
 
 async function main(branch) {
-    // try {
+    try {
         const version = util.getCurrentPackageVersion();
         const isReleaseExists = await isReleaseTagExists(version);
         if (isReleaseExists) {
@@ -173,12 +173,10 @@ async function main(branch) {
         }
 
         const releaseNotes = changes.join('\n');
-        console.log(releaseNotes);
-        return;
         await createRelease(releaseNotes, version, branch);
-    // } catch (e) {
-    //     throw new util.CreateReleaseError(e.message);
-    // }
+    } catch (e) {
+        throw new util.CreateReleaseError(e.message);
+    }
 }
 
 main('master');
