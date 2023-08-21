@@ -102,6 +102,10 @@ stages:
           #     publishRegistry: useExternalRegistry
           #     publishEndpoint: NPM-Automation-Token
           #   continueOnError: true
+          
+          - script: npm install
+            displayName: npm install
+            
           - script: node ./ci/create-release-notes.js
             condition: eq(variables.isMaster, true)
             env: 
