@@ -103,7 +103,7 @@ stages:
           #     publishEndpoint: NPM-Automation-Token
           #   continueOnError: true
           - script: node ./ci/create-release-notes.js
-            condition: eq(isMaster, true)
+            condition: eq(variables.isMaster, true)
             env: 
               GH_TOKEN: $(githubToken)
               branch: $(Build.SourceBranchName)
