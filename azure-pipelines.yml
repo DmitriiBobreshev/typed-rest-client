@@ -94,11 +94,11 @@ stages:
               artifact: _build
               path: $(Build.SourcesDirectory)/_build
 
-          - task: Npm@1
-            displayName: Publish typed-rest-client to npm
-            inputs:
-              command: publish
-              workingDir: '_build'
-              publishRegistry: useExternalRegistry
-              publishEndpoint: NPM-Automation-Token
-            continueOnError: true
+          # - task: Npm@1
+          #   displayName: Publish typed-rest-client to npm
+          #   inputs:
+          #     command: publish
+          #     workingDir: '_build'
+          #     publishRegistry: useExternalRegistry
+          #     publishEndpoint: NPM-Automation-Token
+          #   continueOnError: true
